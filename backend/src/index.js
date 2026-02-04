@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { db } from "./config/firebase.js";
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ app.use(express.json());
 const PORT = process.env.PORT;
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+  res.json({ status: "okkkkkkk" });
 });
 
 app.listen(PORT, () => {
