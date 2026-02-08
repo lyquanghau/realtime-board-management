@@ -1,5 +1,10 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: ".env" });
+
+console.log("ENV CHECK:", {
+  EMAIL_USER: process.env.EMAIL_USER,
+  EMAIL_PASS: process.env.EMAIL_PASS ? "LOADED" : "MISSING",
+});
 
 import express from "express";
 import cors from "cors";

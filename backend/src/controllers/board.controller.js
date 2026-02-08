@@ -7,7 +7,7 @@ import {
 export const createBoardController = async (req, res) => {
   try {
     const { title } = req.body;
-    const ownerId = req.user.userId; // từ JWT middleware
+    const ownerId = req.user.userId;
 
     const board = await createBoard({ title, ownerId });
 

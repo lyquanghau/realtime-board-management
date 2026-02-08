@@ -50,3 +50,17 @@ export const createColumn = async ({ boardId, title }) => {
     title,
   };
 };
+
+export const getColumns = async (boardId) => {
+  const snapshot = await db
+    .collection("boards")
+    .doc(boardId)
+    .collection("columns")
+    .orderBy("createdAt")
+    .get();
+
+  return snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
+};
